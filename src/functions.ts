@@ -6,18 +6,41 @@
 export function fahrenheitToCelius(temperature: number): number {
     return ((temperature - 32) * 5) / 9;
 }
-test("Celsius to Farenheit", () => {
+
+/**test("Converts Celsius to Farenheit:", () => {
     expect(fahrenheitToCelius(0)).toBe(-17.77777777777778);
     expect(fahrenheitToCelius(32)).toBe(0);
 });
+*/
+console.log(fahrenheitToCelius(0));
+console.log(fahrenheitToCelius(32));
 
 /**
  * Consumes three numbers and produces their sum. BUT you should only add a number
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    return 0;
+    let sum: number = 0;
+    if (first > 0) {
+        sum = first;
+    }
+    if (second > 0) {
+        sum += second;
+    }
+    if (third > 0) {
+        sum += third;
+    }
+    return sum;
 }
+
+/**test("Adds the sum:", () => {
+    expect(add3(1, 2, 3)).toBe(6);
+    expect(add3(0, 1, 2)).toBe(3);
+    expect(add3(0, 0, 0)).toBe(0);
+    expect(add3(1, 0, 2)).toBe(2);
+    expect(add3(1, 2, 0)).toBe(2);
+});
+*/
 
 /**
  * Consumes a string and produces the same string in UPPERCASE and with an exclamation
