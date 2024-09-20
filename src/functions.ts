@@ -52,8 +52,9 @@ console.log(add3(0, 0, 0));
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    return message.toUpperCase() + "!";
 }
+console.log(shout("Hello"));
 
 /**
  * Consumes a string (a message) and returns a boolean if the string ends in a question
