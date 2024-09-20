@@ -61,8 +61,10 @@ console.log(shout("Hello"));
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return true;
+    return "?" === message[message.length - 1];
 }
+console.log(isQuestion("Hello?"));
+console.log(isQuestion("Hello"));
 
 /**
  * Consumes a word (a string) and returns either `true`, `false`, or `null`. If the string
