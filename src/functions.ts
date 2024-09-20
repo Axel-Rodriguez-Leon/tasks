@@ -4,8 +4,13 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    let celsius: number = ((temperature - 32) * 5) / 9;
+    return celsius;
 }
+test("Celsius to Farenheit", () => {
+    expect(fahrenheitToCelius(0)).toBe(-17.77777777777778);
+    expect(fahrenheitToCelius(32)).toBe(0);
+});
 
 /**
  * Consumes three numbers and produces their sum. BUT you should only add a number
