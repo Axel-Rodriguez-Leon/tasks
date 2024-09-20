@@ -4,8 +4,7 @@
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    let celsius: number = ((temperature - 32) * 5) / 9;
-    return celsius;
+    return ((temperature - 32) * 5) / 9;
 }
 test("Celsius to Farenheit", () => {
     expect(fahrenheitToCelius(0)).toBe(-17.77777777777778);
