@@ -5,7 +5,9 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    return numbers;
+    let clonedNums: number[] = [];
+
+    return clonedNums;
 }
 
 /**
@@ -13,8 +15,11 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    return numbers;
+    const tripled = numbers.map((num: number): number => num * 3);
+    return tripled;
 }
+
+console.log(tripleNumbers([1, 2, 3]));
 
 /**
  * Consume an array of strings and convert them to integers. If
