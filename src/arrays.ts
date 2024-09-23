@@ -5,10 +5,19 @@
  * the number twice.
  */
 export function bookEndList(numbers: number[]): number[] {
-    let clonedNums: number[] = [];
-
-    return clonedNums;
+    if (numbers.length == 0) {
+        return [];
+    } else if (numbers.length == 1) {
+        const num = [numbers[0], numbers[0]];
+        return num;
+    } else {
+        const num = [numbers[0], numbers[numbers.length - 1]];
+        return num;
+    }
 }
+console.log(bookEndList([1]));
+console.log(bookEndList([]));
+console.log(bookEndList([1, 2, 3]));
 
 /**
  * Consume an array of numbers, and return a new array where each
