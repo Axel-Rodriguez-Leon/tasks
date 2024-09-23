@@ -72,7 +72,7 @@ console.log(isQuestion("Hello"));
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    let isYes: boolean = null;
+    let isYes: boolean = true;
     if (word.toUpperCase() === "YES") {
         isYes = true;
         return isYes;
@@ -81,7 +81,7 @@ export function convertYesNo(word: string): boolean | null {
         isYes = false;
         return isYes;
     }
-    return isYes;
+    return null;
 }
 
 console.log(convertYesNo("yes"));

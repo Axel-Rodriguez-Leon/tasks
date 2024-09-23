@@ -50,6 +50,14 @@ console.log(stringsToIntegers(["123", "abc"]));
  */
 // Remember, you can write functions as lambdas too! They work exactly the same.
 export const removeDollars = (amounts: string[]): number[] => {
+    /*return amounts.map((str) => {
+        if (str[0] == "$"){}
+        const num = parseInt(str, 10);
+    })*/
+    const prices = amounts.map(price:string): number => {
+        if (price[0] == "$"){
+            price = str
+        }
     return [];
 };
 
