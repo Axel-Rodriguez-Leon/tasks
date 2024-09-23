@@ -26,8 +26,12 @@ console.log(tripleNumbers([1, 2, 3]));
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    return [];
+    return numbers.map((str) => {
+        const num = parseInt(str, 10);
+        return isNaN(num) ? 0 : num;
+    });
 }
+console.log(stringsToIntegers(["123", "abc"]));
 
 /**
  * Consume an array of strings and return them as numbers. Note that
