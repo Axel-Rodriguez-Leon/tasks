@@ -54,12 +54,13 @@ export const removeDollars = (amounts: string[]): number[] => {
         if (str[0] == "$"){}
         const num = parseInt(str, 10);
     })*/
-    const prices = amounts.map(price:string): number => {
-        if (price[0] == "$"){
-            price = str
-        }
-    return [];
+    return amounts.map((price) => {
+        const removed = price.replace("$", "");
+        const num = parseInt(removed, 10);
+        return isNaN(num) ? 0 : num;
+    });
 };
+console.log(removeDollars(["$100", "200", "$abc", "$50", "xyz"]));
 
 /**
  * Consume an array of messages and return a new list of the messages. However, any
