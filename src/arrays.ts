@@ -68,16 +68,21 @@ console.log(removeDollars(["$100", "200", "$abc", "$50", "xyz"]));
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
-    return [];
+    const fltrdMsgs = messages.filter((message) => !message.endsWith("?"));
+    return fltrdMsgs.map((message) =>
+        message.endsWith("!") ? message.toUpperCase() : message,
+    );
 };
+console.log(shoutIfExclaiming(["Hello!", "Hello?", "Yo!", "Huh?"]));
 
 /**
  * Consumes an array of words and returns the number of words that are LESS THAN
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    return 0;
+    return words.filter((word) => word.length < 4).length;
 }
+console.log(countShortWords(["cat", "dog", "hello", "string", "fish"]));
 
 /**
  * Consumes an array of colors (e.g., 'red', 'purple') and returns true if ALL
@@ -85,8 +90,12 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    const rgb = ["red", "blue", "green"];
+    return colors.length === 0 || colors.every((color) => rgb.includes(color));
 }
+console.log(allRGB(["red", "green", "blue"]));
+console.log(allRGB([]));
+console.log(allRGB(["cyan", "magenta", "yellow"]));
 
 /**
  * Consumes an array of numbers, and produces a string representation of the
@@ -96,8 +105,12 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    const sum = addends.reduce((total, num) => total + num, 0);
+    const strRep = addends.length > 0 ? addends.join("+") : "0";
+    return sum.toString() + "=" + strRep;
 }
+console.log(makeMath([]));
+console.log(makeMath([1, 2, 3]));
 
 /**
  * Consumes an array of numbers and produces a new array of the same numbers,
@@ -109,5 +122,26 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
+    /*let sum = 0;
+    let negative = false;
+
+    const result = values.reduce<number[]>((total, value) => {
+        sum += value;
+        total.push(value);
+
+        if (value < 0 && !negative) {
+            total.push(sum);
+            negative = true;
+        }
+
+        return total;
+    }, []);
+
+    if (!negative) {
+        result.push(sum);
+    }
+
+    return result;
+    */
     return [];
 }
