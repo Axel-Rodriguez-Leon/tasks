@@ -30,7 +30,9 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    return (
+        question.expected.trim().toLowerCase() === answer.trim().toLowerCase()
+    );
 }
 
 /**
@@ -40,7 +42,12 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    const valid = (question: Question, answer: string): boolean => {
+        return question.type === "multiple_choice_question" ?
+                question.options.includes(answer)
+            :   true;
+    };
+    return valid(question, answer);
 }
 
 /**
@@ -50,7 +57,7 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    return question.id.toString() + ": " + question.name.slice(0, 9);
 }
 
 /**
