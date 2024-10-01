@@ -122,26 +122,22 @@ console.log(makeMath([1, 2, 3]));
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    /*let sum = 0;
-    let negative = false;
+    const sumUpTo = (arr: number[]): number =>
+        arr.reduce((acc, num) => acc + num, 0);
 
-    const result = values.reduce<number[]>((total, value) => {
-        sum += value;
-        total.push(value);
+    const indexOfFirstNegative = values.findIndex((num) => num < 0);
 
-        if (value < 0 && !negative) {
-            total.push(sum);
-            negative = true;
-        }
-
-        return total;
-    }, []);
-
-    if (!negative) {
-        result.push(sum);
+    if (indexOfFirstNegative !== -1) {
+        const sumBeforeNegative = sumUpTo(
+            values.slice(0, indexOfFirstNegative),
+        );
+        return [
+            ...values.slice(0, indexOfFirstNegative + 1),
+            sumBeforeNegative,
+            ...values.slice(indexOfFirstNegative + 1),
+        ];
+    } else {
+        const totalSum = sumUpTo(values);
+        return [...values, totalSum];
     }
-
-    return result;
-    */
-    return [];
 }
