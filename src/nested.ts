@@ -15,9 +15,13 @@ export function getPublishedQuestions(questions: Question[]): Question[] {
  * `expected`, and an empty array for its `options`.
  */
 export function getNonEmptyQuestions(questions: Question[]): Question[] {
-    return []; /*questions.filter((question: Question) => {
-        return question.body !== "" && question.expected !== "" && question.options.length > 0;
-    });*/
+    return questions.filter((question: Question) => {
+        return (
+            question.body !== "" ||
+            question.expected !== "" ||
+            question.options.length > 0
+        );
+    });
 }
 
 /***
@@ -28,7 +32,8 @@ export function findQuestion(
     questions: Question[],
     id: number,
 ): Question | null {
-    return null;
+    const question = questions.find((question: Question) => id === question.id);
+    return question || null;
 }
 
 /**
