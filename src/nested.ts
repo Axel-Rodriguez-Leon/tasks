@@ -146,7 +146,8 @@ export function addNewQuestion(
     name: string,
     type: QuestionType,
 ): Question[] {
-    return [];
+    const newQuestion: Question = makeBlankQuestion(id, name, type);
+    return [...questions, newQuestion];
 }
 
 /***
