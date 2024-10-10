@@ -15,23 +15,22 @@ export function TwoDice(): React.JSX.Element {
     const [die1, setDie1] = useState<number>(1);
     const [die2, setDie2] = useState<number>(6);
 
-    const rollDie = (die: string): void => {
+    /*const rollDie = (die: string): void => {
         if (die === "Left") {
             setDie1(d6);
         } else {
             setDie2(d6);
         }
-    };
+    };*/
 
     return (
         <div>
             <div>
                 <Button
                     onClick={() => {
-                        rollDie("Left");
+                        setDie1(d6);
                     }}
                 >
-                    {" "}
                     Roll Left
                 </Button>
                 Left Die: <span data-testid="left-die">{die1}</span>
@@ -39,10 +38,9 @@ export function TwoDice(): React.JSX.Element {
             <div>
                 <Button
                     onClick={() => {
-                        rollDie("Right");
+                        setDie2(d6);
                     }}
                 >
-                    {" "}
                     Roll Right
                 </Button>
                 Right Die: <span data-testid="right-die">{die2}</span>
