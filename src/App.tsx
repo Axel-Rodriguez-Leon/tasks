@@ -1,6 +1,11 @@
 import React from "react";
 import "./App.css";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
 
 function App(): React.JSX.Element {
     return (
@@ -15,45 +20,18 @@ function App(): React.JSX.Element {
                     style={{ width: "20%", height: "20%" }}
                 />
             </header>
-            <ul>
-                <li>First thing</li>
-                <li>Another thing</li>
-                <li>A third item</li>
-            </ul>
-            <Button
-                onClick={() => {
-                    console.log("Hello World!");
-                }}
-            >
-                Log Hello World
-            </Button>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-            <Container>
-                <Row>
-                    <Col>
-                        <div
-                            style={{
-                                width: "10%",
-                                height: "20%",
-                                backgroundColor: "red",
-                            }}
-                        ></div>
-                    </Col>
-                    <Col>
-                        hellooooo
-                        <div
-                            style={{
-                                width: "10%",
-                                height: "20%",
-                                backgroundColor: "red",
-                            }}
-                        ></div>
-                    </Col>
-                </Row>
-            </Container>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
