@@ -24,14 +24,18 @@ function ChangeColor({
     );
 }
 
-function ColorPreview(): React.JSX.Element {
+interface ColorPreviewProps {
+    colorIndex: number;
+}
+
+function ColorPreview({ colorIndex }: ColorPreviewProps): React.JSX.Element {
     return (
         <div
             data-testid="colored-box"
             style={{
                 width: "50px",
                 height: "50px",
-                backgroundColor: COLORS[DEFAULT_COLOR_INDEX],
+                backgroundColor: COLORS[colorIndex],
                 display: "inline-block",
                 verticalAlign: "bottom",
                 marginLeft: "5px",
@@ -45,7 +49,7 @@ export function ColoredBox(): React.JSX.Element {
     return (
         <div>
             <h3>Colored Box</h3>
-            <span>The current color is: {COLORS[DEFAULT_COLOR_INDEX]}</span>
+            <span>The current color is: {COLORS[colorIndex]}</span>
             <div>
                 <ChangeColor
                     colorIndex={colorIndex}
