@@ -251,6 +251,8 @@ export function duplicateQuestionInArray(
     newId: number,
 ): Question[] {
     return questions.reduce((acc: Question[], question: Question) => {
+        // If the current question matches the targetId, concatenate the original
+        // and the duplicated question. Otherwise, just concatenate the original question.
         return question.id === targetId ?
                 acc.concat([question, duplicateQuestion(newId, question)])
             :   acc.concat(question);
